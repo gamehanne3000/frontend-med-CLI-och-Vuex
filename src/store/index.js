@@ -12,8 +12,7 @@ export default new Vuex.Store({
     weight: null,
     base_experience: null,
     type: null,
-    catched: null,
-    message: null
+    catched: '',
   },
   mutations: {
     setPicDefault(state, PicDefault) {
@@ -36,6 +35,9 @@ export default new Vuex.Store({
     },
     setType(state, type) {
       state.type = type
+    },
+    catch(state, pokemons) {
+          state.catched = pokemons
     }
   },
   actions: {
