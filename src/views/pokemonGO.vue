@@ -1,17 +1,22 @@
 
 <template>
   <div>
-    <img class="img" src="../assets/kantocelebration.jpg" alt="">
+    <img src="../assets/kantocelebration.jpg" alt="">
     <pokemon-go/>
+    <mbutton/> <!-- default värde -->
+    <mbutton :number="3"/> <!-- eget satt värde -->
   </div>
 </template>
 
 <script>
-// integrera specefik component som sedan kan associeras med template
+// integrera specifik komponent som sedan kan associeras med template
 import pokGo from '@/components/component-Pokemon-Go.vue'
+import meaningless from '@/components/prop.vue'
+
 export default {
   components: {
-    'pokemon-go': pokGo
+    'pokemon-go': pokGo,
+    'mbutton': meaningless
   }
 }
 </script>
