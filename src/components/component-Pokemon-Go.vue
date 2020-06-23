@@ -2,7 +2,12 @@
     <div class="wrapper">
         <h3>How many pokemons have you catched in pokemon go ?! </h3>
         <input v-model.trim="searchedpokemon" placeholder="type here">
-        <p>catches pokemons showned here: {{searchedpokemon}}</p>
+        
+        <!-- 
+            Denna tag LÄSER av ett värde mha params och inte som vid router.push där jag SKRIVER ett värde, läs nedan i watch.
+            Det betyder att jag få samma funktionalitet men att jag skriver på 2 lite olika sätt!
+        -->
+        <p v-if="$route.params.catchedPokes != null"> catches pokemons showned here: {{$route.params.catchedPokes}}</p>
     </div>
 </template>
 
@@ -19,7 +24,7 @@
            }
         }
     },
-    /* Servern kollar nu explicit efter ändringar i url m.h.a watch */
+        /* Servern kollar nu explicit efter ändringar i url m.h.a watch = SKRIVER ett värde */
     watch: {
         searchedpokemon(q) { 
             this.$router.push({name: 'pokemonGO', query: { q } })

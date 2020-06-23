@@ -21,6 +21,11 @@ Vue.use(VueRouter)
       title: 'catched pokemons'
     },
     component: PokemonGO
+  },
+  { // tillåter mig själv att kunna lägga till en parameter på samma 
+    // rutt eftersom den läser från samma komponent
+    path: '/pokemonGO/:catchedPokes?',
+    component: PokemonGO,
   }
 ]
 
